@@ -48,24 +48,36 @@ function displayData(){
          '</h3><p>'+productscontainer[i].Price+
          '</p><p class="text-success">'+productscontainer[i].Company+
          '</p><p class="text-info">'+productscontainer[i].Desc+
-         '</p><button class="btn btn-danger mt-3 " onclick= "deletpro('+i+')" >Delete</button></div></div>'
+         '</p><button class="btn btn-danger mt-3 " onclick= "deletpro('+i
+         +')" >Delete</button><br/><button class="btn btn-primary mt-3 " onclick= "updatpro('+i
+         +')" >Update</button></div></div>'
                          
     }
     document.querySelector(".row").innerHTML = col
     
 }
-
+// reset inputs
 function clearForm(){
-   productNameInp.value=" "       // reset inputs
-   productpriceInp.value=" "      // reset inputs
-   productCompanyInp.value=" "    // reset inputs
-   productDescInp.value=" "       // reset inputs
+   productNameInp.value=" "       
+   productpriceInp.value=" "      
+   productCompanyInp.value=" "    
+   productDescInp.value=" "       
 
 }
 // delete function
 function deletpro(id){
     productscontainer.splice(id,1) //cut this id frome the array
-    localStorage.setItem("productsContainer",JSON.stringify(productscontainer)) //after  store new data
+    //updat local storage
+    localStorage.setItem("productsContainer",JSON.stringify(productscontainer)) 
     displayData()
+}
+//update func
+function updatpro(id){
+    productNameInp.value= productscontainer[id].Name      
+   productpriceInp.value=productscontainer[id].Price      
+   productCompanyInp.value=productscontainer[id].Company    
+   productDescInp.value=productscontainer[id].Desc 
+   
+   deletpro(id);
 }
 
