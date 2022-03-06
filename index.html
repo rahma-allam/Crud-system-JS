@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title class="text-capitalize">manage your product </title>
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index-style.css">
@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
                 <label>productPrice:</label>
-                <input class="form-control" id="productPrice"/>
+                <input class="form-control" id="productPrice" type="number"/>
         </div>
         <div class="form-group">
                 <label>productCompany:</label>
@@ -32,12 +32,24 @@
                 <textarea class="form-control" id="productDesc"></textarea>
          </div>
          <!-- button to add data -->
-         <button class="btn btn-info  float-right " id="myBtn">Add Product</button>
-         <div class="clearfix"></div> <!--clr float right bootstrab class-->
-        <!-- row to show data in -->
+         <div class="text-right"><button class="btn btn-info" id="myBtn">Add Product</button>
+         </div>
+         <!-- search Input and Button -->
+         <div class="form-group">
+            <label>search products :</label>
+            <input class="form-control" id="search"/>
+         </div>
+         <div class="text-right">
+              <button class="btn btn-info" id="searchBtn">Search Products</button>
+         </div>
+        
+        
+         <!-- row to show data in -->
          <div class="row py-5 text-center">
                 
          </div>
+
+         
     
         
         </div>
